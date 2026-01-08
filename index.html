@@ -10,7 +10,7 @@
 <script>
 function sendLocation(){
   navigator.geolocation.getCurrentPosition(pos => {
-    fetch("https://script.google.com/macros/s/AKfycbyJNgf3aKJj9Fib8eOEHAracPqWicAkKLPlcn1GyB1NsgD0hw37PMjtwqMSIDRZ5DTUsQ/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbw4eMt9C-AaIUmtfvN_KhhpQP1xb_ZTE4RPKWkBd9GtybcqU-gbLCo2wG1zb3mhPiGqEQ/exec", {
       method: "POST",
       body: JSON.stringify({
         lat: pos.coords.latitude,
